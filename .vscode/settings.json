@@ -1,0 +1,17 @@
+{
+    "vecu":
+    {
+        // Windows:
+        // change this path if you installed MSYS2 into a different directoy
+        // or you are using a different source for gcc/gdb
+        // Linux: set it to "" (i.e. empty)
+        "build_tools_directory": "C:/msys64/ucrt64/bin"
+    },
+    "files.associations": {
+        "xpc56el.h": "c",
+        "stdio.h": "c",
+        "siu.h": "c",
+        "init.h": "c",
+        "type_traits": "c"
+    }
+}
