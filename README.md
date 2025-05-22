@@ -57,7 +57,7 @@ This project demonstrates the development of an Electronic Control Unit (ECU) ap
 
 ## Author
 
-**Saad Njimi** — M.Sc. Automotive Software Engineering student  
+**Saad Nm** — M.Sc. Automotive Software Engineering student  
 [GitHub](https://github.com/SaadNjimi) 
 
 ---
