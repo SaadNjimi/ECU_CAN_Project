@@ -1,60 +1,65 @@
-ECU_CAN_Project
-Overview
-This project demonstrates the development of an Electronic Control Unit (ECU) application with CAN bus communication, implemented as part of a university automotive software engineering course. The ECU interacts with a virtual dashboard simulator (VirtualCockpit) by sending and receiving CAN messages to control vehicle indicators such as speed, RPM, and lights.
+# ECU_CAN_Project
 
-Features
-CAN controller configuration for message transmission and reception (standard and extended frames).
+## Overview
 
-Message filtering based on CAN IDs (0x10, 0x11).
+This project demonstrates the development of an Electronic Control Unit (ECU) application with CAN bus communication, created as part of a university course in automotive software engineering. The ECU interacts with a virtual dashboard simulator (**VirtualCockpit**) by sending and receiving CAN messages to control vehicle indicators such as speed, RPM, and lights.
 
-Interrupt-driven message handling with LED indicators.
+---
 
-Periodic sending of CAN messages to control virtual dashboard elements:
+## Features
 
-Vehicle speed mapped from an analog potentiometer input (0–240 km/h).
+- Configured CAN controller for message transmission and reception (standard & extended frames).
+- Implemented message filtering for CAN IDs 0x10 and 0x11.
+- Interrupt-driven CAN message handling with LED indicators.
+- Periodic CAN messages to control virtual dashboard elements:
+  - Vehicle speed mapped from analog potentiometer input (0–240 km/h).
+  - Cyclic RPM pattern generation.
+  - Indicator and light control based on input switches.
+- Integration with VirtualCockpit for real-time ECU simulation and validation.
 
-Cyclic RPM pattern generation.
+---
 
-Lights and indicators control based on input switches.
+## Technologies & Tools
 
-Integration and validation with the VirtualCockpit tool for real-time simulation.
+- **Programming Language:** C (Embedded)
+- **Hardware:** Microcontroller with CAN Bus support
+- **Software Tools:** VirtualCockpit (dashboard simulator), CAN protocol stack
 
-Technologies & Tools
-Programming Language: C (Embedded)
+---
 
-Hardware: Microcontroller with CAN Bus support
+## Project Structure
 
-Software Tools: VirtualCockpit (dashboard simulator), CAN protocol stack
+- `source/siu.c` — CAN controller pin configuration and initialization  
+- `source/can.c` — CAN message buffer setup and transmission functions  
+- `main.c` — Main program logic, message handling, and LED control  
+- Additional headers and configs for CAN filtering and buffer management  
 
-Project Structure
-source/siu.c — CAN controller pin configuration and initialization
+---
 
-source/can.c — CAN message buffer setup and transmission functions
+## Usage Instructions
 
-main.c — Main program flow, message handling, and LED control
+1. Set up the microcontroller hardware and connect it to the CAN bus.  
+2. Launch the VirtualCockpit tool on your development PC.  
+3. Compile and flash the ECU firmware to the microcontroller.  
+4. Use VirtualCockpit to send “Start Engine” (ID 0x11) and “Stop Engine” (ID 0x10) CAN messages.  
+5. Observe the virtual dashboard’s real-time response to ECU CAN messages.  
+6. Modify and extend the source code to experiment with CAN message handling and ECU behavior.  
 
-Additional headers and configuration files for CAN filtering and buffer management
+---
 
-How to Use
-Set up the microcontroller hardware and connect to the CAN bus.
+## Future Improvements
 
-Launch the VirtualCockpit tool on the development PC.
+- Extend support for AUTOSAR-compliant software components.  
+- Implement advanced diagnostics and error handling features.  
+- Optimize CAN message scheduling for enhanced real-time performance.  
 
-Compile and flash the ECU firmware.
+---
 
-Use VirtualCockpit to send “Start Engine” (ID 0x11) and “Stop Engine” (ID 0x10) messages.
+## Author
 
-Observe the virtual dashboard reacting to CAN messages sent from the ECU.
+**Saad Njimi** — M.Sc. Automotive Software Engineering student  
+[GitHub](https://github.com/SaadNjimi) 
 
-Modify the source code to experiment with different CAN message behaviors and configurations.
+---
 
-Future Work
-Extend support for AUTOSAR-compliant software components.
-
-Implement advanced diagnostics and error handling.
-
-Optimize CAN message scheduling for real-time performance.
-
-Author
-Saad Njimi — M.Sc. Automotive Software Engineering student
-
+*Feel free to contribute or reach out for collaboration!*
